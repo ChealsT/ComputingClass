@@ -1,12 +1,12 @@
 /* Navbar container */
-.navbar {
+.NavBar {
   overflow: hidden;
   background-color: #333;
   font-family: Arial;
 }
 
 /* Links inside the navbar */
-.navbar a {
+.NavBar a {
   float: left;
   font-size: 16px;
   color: white;
@@ -34,7 +34,7 @@
 }
 
 /* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
+.NavBar a:hover, .dropdown:hover .dropbtn {
   background-color: red;
 }
 
