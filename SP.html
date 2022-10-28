@@ -255,10 +255,9 @@ function deletefromlist () {
 
   while (isNaN(ask)||ask == ""|| ask == '' || ask <= 0 || ask > tab.length ){
     ask = prompt("Please input a valid number between 1 and "+tab.length+"");
-  }
-
-  if (ask == null) {
+      if (ask == null) {
     return;
+  }
   }
 
   if (confirm("Delete item no. "+ask+"?") == true) {
