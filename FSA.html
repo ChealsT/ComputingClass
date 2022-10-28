@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Factorial, Sum & Average of N</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="styles.css">
+<style>
+  body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+.box {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+    height: 50%;
+    padding: 10px 10px;
+}
+
+.box:first-child {
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-top: 2px solid black;
+}
+.box:nth-child(2) {
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+.box:nth-child(3) {
+    border-bottom: 2px solid black;
+    margin: auto;
+    width: 100%;
+}
+</style>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<!-- Navigation Bar as button + links-->
+<div class="NavBar">
+  <a  href="index.html">Home</a>
+  
+    <div class="dropdown">
+    <button class="dropbtn">Assignment #1</button>
+    <div class="dropdown-content">
+      <a href="main.html" target="_self">All Conversions</a>
+      <a href="CtF.html" target="_self">Celsius to Farenheit</a>
+      <a href="FtC.html" target="_self">Farenheit to Celsius</a>
+      <a href="MtF.html" target="_self">Meter to Feet</a>
+      <a href="FtM.html" target="_self">Feet to Meter</a>
+    </div>
+  </div>
+
+ <div class="dropdown">
+  <button class="dropbtn">Assignment #2</button>
+  <div class="dropdown-content">
+    <a href="ITC.html" target="_self">Income Tax Calculator</a>
+  </div>
+ </div>
+
+ <div class="dropdown active">
+  <button class="dropbtn">Assignment #3</button>
+  <div class="dropdown-content">
+    <a href="FSA.html" target="_self">Factorial, Sum & Average of N</a>
+    <a href="FAC.html" target="_self">Nth Factorial</a>
+    <a href="SUM.html" target="_self">Sum of the first N numbers</a>
+    <a href="AVE.html" target="_self">Average of the first N numbers</a>
+  </div>
+ </div>
+
+ <div class="dropdown">
+  <button class="dropbtn">Assignment #4</button>
+  <div class="dropdown-content">
+    <a href="SP.html" target="_self">Simple Payroll</a>
+  </div>
+</div>
+</div>
+
+<h1>Solving for N Using Loops</h1>
+
+<div class="grid-container">
+    <div class="box">
+      <h2>Factorial (While Loop)</h2>
+  
+      <p>
+      <label for="Factorial">Input a number:</label> 
+      <input id="Factorial" name="Factorial" type="number">
+      <button onclick="computeFactorial()"> Compute for the Factorial </button>
+      </p>
+       
+      <p>
+      <label for="F" id="Flabel">Result:</label>  
+      <input id="F" name="F" type="number" readonly></input>
+      </p>    
+    </div>
+  
+    <div class="box">
+      <h2>Sum (Do While Loop)</h2>
+  
+      <p>
+      <label for="Sum">Input a number:</label> 
+      <input id="Sum" name="Sum" type="number">
+      <button onclick="computeSum()"> Compute the Sum </button>
+      </p>
+       
+      <p>
+      <label for="R" id="Rlabel">Result:</label>  
+      <input id="R" name="R" type="number" readonly></input>
+      </p>
+    </div>
+  
+    <div class="box">
+      <h2>Average (For Loop)</h2>
+  
+      <p>
+      <label for="num">Input a number:</label> 
+      <input id="num" name="num" type="number">
+      <button onclick="computeAve()"> Compute for the Average </button>
+      </p>
+       
+      <p>
+      <label for="Ave" id="Avelabel">Result:</label>  
+      <input id="Ave" name="Ave" type="number" readonly></input>
+      </p>
+    </div>
+</div>
+
+  <br> 
+  <button class="back" onclick="document.location='index.html'">Back to Home</button>
+  
+  <script>
+  function computeFactorial(){
+    var a;
+    a = document.getElementById("Factorial").value*1;
+  
+    let loop = 1;
+    let i = 1;
+
+    while (loop <= a) {
+        i = i*loop;
+        loop++;
+    }
+
+    let b = i;
+
+    document.getElementById("Flabel").innerHTML='Factorial of '+a+' is:';
+    document.getElementById("F").value=b;
+  }  
+
+    function computeSum() {
+        var c;
+        c = document.getElementById("Sum").value*1;
+
+        let loops = 1;
+        let dowhile = 0;
+
+        do {
+            dowhile = dowhile + loops;
+            loops++;
+        } while (loops <= c);
+
+        let d = dowhile;
+
+        document.getElementById("Rlabel").innerHTML='Sum of the numbers 1 to '+c+' is:';
+        document.getElementById("R").value=d;
+    }
+
+    function computeAve() {
+        var e;
+        e = document.getElementById("num").value*1;
+
+        let forloop = 0;
+
+        for (let index = 1; index <= e; index++) {
+            forloop = forloop + index;
+        }
+
+        forloop = forloop/e;
+        let f = forloop;
+
+        document.getElementById("Avelabel").innerHTML='Average of the numbers 1 to '+e+' is:';
+        document.getElementById("Ave").value=f;
+    }
+  </script>
+</body>
+</html>

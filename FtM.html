@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Feet to Meter</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- link to the styles -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+
+    <div class="NavBar">
+        <a  href="index.html">Home</a>
+        
+          <div class="dropdown">
+          <button class="dropbtn">Assignment #1</button>
+          <div class="dropdown-content">
+            <a href="main.html" target="_self">All Conversions</a>
+            <a href="CtF.html" target="_self">Celsius to Farenheit</a>
+            <a href="FtC.html" target="_self">Farenheit to Celsius</a>
+            <a href="MtF.html" target="_self">Meter to Feet</a>
+            <a href="FtM.html" target="_self">Feet to Meter</a>
+          </div>
+        </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #2</button>
+        <div class="dropdown-content">
+          <a href="ITC.html" target="_self">Income Tax Calculator</a>
+        </div>
+       </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #3</button>
+        <div class="dropdown-content">
+          <a href="FSA.html" target="_self">Factorial, Sum & Average of N</a>
+    <a href="FAC.html" target="_self">Nth Factorial</a>
+    <a href="SUM.html" target="_self">Sum of the first N numbers</a>
+    <a href="AVE.html" target="_self">Average of the first N numbers</a>
+        </div>
+       </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #4</button>
+        <div class="dropdown-content">
+          <a href="Simple_Payroll.html" target="_self">Simple Payroll</a>
+        </div>
+      </div>
+      </div>
+
+<h1>Feet to Meter Converter</h1>
+
+<p>
+<label for="F">Feet:</label> 
+<input id="F" name="F" type="number">
+<button onclick="convertF()"> Convert to Meter</button>
+</p>
+ 
+<p>
+<label for="M" id="Mlabel">Result:</label>  
+<input id="M" name="M" type="number" readonly></input>
+</p>
+
+<br> 
+<button class="back" onclick="document.location='index.html'">Back to Home</button>
+
+<script>
+function convertF()
+{
+  var x;
+
+  // Retrieve the user input 
+  x = document.getElementById("F").value*1;  // *1 Converts the result to number
+ // console.log(x);
+
+  // Convert
+  let z  = x/3.281;
+
+    
+  // Display the result
+  document.getElementById("Mlabel").innerHTML=''+x+' Feet converted to Meter is:';
+document.getElementById("M").value=z;
+} 
+</script>
+</body>
+</html>
