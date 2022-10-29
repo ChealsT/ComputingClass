@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Farenheit to Celsius</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- link to the styles -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+
+    <div class="NavBar">
+        <a  href="index.html">Home</a>
+        
+          <div class="dropdown active">
+          <button class="dropbtn">Assignment #1</button>
+          <div class="dropdown-content">
+            <a href="main.html" target="_self">All Conversions</a>
+            <a href="CtF.html" target="_self">Celsius to Farenheit</a>
+            <a href="FtC.html" target="_self">Farenheit to Celsius</a>
+            <a href="MtF.html" target="_self">Meter to Feet</a>
+            <a href="FtM.html" target="_self">Feet to Meter</a>
+          </div>
+        </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #2</button>
+        <div class="dropdown-content">
+          <a href="ITC.html" target="_self">Income Tax Calculator</a>
+        </div>
+       </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #3</button>
+        <div class="dropdown-content">
+          <a href="FSA.html" target="_self">Factorial, Sum & Average of N</a>
+    <a href="FAC.html" target="_self">Nth Factorial</a>
+    <a href="SUM.html" target="_self">Sum of the first N numbers</a>
+    <a href="AVE.html" target="_self">Average of the first N numbers</a>
+        </div>
+       </div>
+      
+       <div class="dropdown">
+        <button class="dropbtn">Assignment #4</button>
+        <div class="dropdown-content">
+          <a href="SP.html" target="_self">Simple Payroll</a>
+        </div>
+      </div>
+      </div>
+
+<h1>Farenheit to Celsius Converter</h1>
+
+<p>
+<label for="F">Farenheit:</label> 
+<input id="F" name="F" type="number">
+<button onclick="convertFa()"> Convert to Celcius </button>
+</p>
+ 
+<p>
+<label for="C" id="Clabel">Result:</label>  
+<input id="C" name="C" type="number" readonly></input>
+</p>
+
+<br> 
+<button class="back" onclick="document.location='index.html'">Back to Home</button>
+
+<script>
+function convertFa()
+{
+  var x;
+
+  x = document.getElementById("F").value*1;  // *1 Converts the result to number
+ 
+  x = parseInt(x);
+
+  while (isNaN(x)||x == ""|| x == '' || x <= 0){
+    let p = alert("Please input a valid number");
+    return;
+  }
+
+  let z  = (x-32) * 5/9;
+
+  document.getElementById("Clabel").innerHTML=''+x+'° Farenheit converted to Celsius is:';
+   document.getElementById("C").value=z;
+
+}
+   
+</script>
+</body>
+</html>
